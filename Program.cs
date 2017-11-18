@@ -33,6 +33,7 @@ namespace csharpcollection
             */
 
             // Adding some value in Hashtable
+            /*
             owner.Add("Billl", "Microsoft");
             owner.Add("Paul", "Microsoft");
             owner.Add("Steve", "Apple");
@@ -45,6 +46,25 @@ namespace csharpcollection
             foreach(DictionaryEntry item in owner)
             {
                 Console.WriteLine("{0}, {1}", item.Key, item.Value);
+            }
+            */
+
+            // Adding queue
+            Queue days = new Queue();
+
+            // Adding element into queue
+            days.Enqueue("月曜日");
+            days.Enqueue("か呼び");
+            days.Enqueue("水曜日");
+            days.Enqueue("木曜日");
+            days.Enqueue("金呼び");
+            days.Enqueue("ど呼び");
+            days.Enqueue("日曜日");
+
+            // iterate each element
+            foreach(var item in days)
+            {
+                Console.WriteLine(item);
             }
         }
     }
