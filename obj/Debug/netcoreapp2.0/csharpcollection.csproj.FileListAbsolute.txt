@@ -1,0 +1,10 @@
+/Users/tuananhle/Documents/GitHub/csharpcollection/bin/Debug/netcoreapp2.0/csharpcollection.deps.json
+/Users/tuananhle/Documents/GitHub/csharpcollection/bin/Debug/netcoreapp2.0/csharpcollection.runtimeconfig.json
+/Users/tuananhle/Documents/GitHub/csharpcollection/bin/Debug/netcoreapp2.0/csharpcollection.runtimeconfig.dev.json
+/Users/tuananhle/Documents/GitHub/csharpcollection/bin/Debug/netcoreapp2.0/csharpcollection.dll
+/Users/tuananhle/Documents/GitHub/csharpcollection/bin/Debug/netcoreapp2.0/csharpcollection.pdb
+/Users/tuananhle/Documents/GitHub/csharpcollection/obj/Debug/netcoreapp2.0/csharpcollection.csproj.CoreCompileInputs.cache
+/Users/tuananhle/Documents/GitHub/csharpcollection/obj/Debug/netcoreapp2.0/csharpcollection.AssemblyInfoInputs.cache
+/Users/tuananhle/Documents/GitHub/csharpcollection/obj/Debug/netcoreapp2.0/csharpcollection.AssemblyInfo.cs
+/Users/tuananhle/Documents/GitHub/csharpcollection/obj/Debug/netcoreapp2.0/csharpcollection.dll
+/Users/tuananhle/Documents/GitHub/csharpcollection/obj/Debug/netcoreapp2.0/csharpcollection.pdb
