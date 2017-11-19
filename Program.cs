@@ -1,15 +1,60 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace csharpcollection
 {
-    class Program
+    class MyList<T> : IEnumerable<T>
     {
+        List<T> list = new List<T>();
+
+        // Get length
+        public int Length()
+        {
+            return list.Count;
+        }
+
+        public void Add(T element)
+        {
+            list.Add(element);
+        }
+
+        public IEnumerator<T> GetEnumerator() {
+            foreach(var item in list)
+            {
+                yield return item;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
+        }
+    }
+
+    class Person 
+    {
+        public string Name { get; set;}
+        public int Age { get; set; }
+    }
+
+    class Program 
+    {    
+        /*
+        public static IEnumerable EnumMethod(int number)
+        {
+            for(int i = 0; i < number; i++)
+            {
+                yield return i;
+            }
+        }
+        */
+
         static void Main(string[] args)
         {
             //Console.WriteLine("Hello World!");
-            ArrayList arrayList = new ArrayList();
-            Hashtable owner = new Hashtable();
+            //ArrayList arrayList = new ArrayList();
+            //Hashtable owner = new Hashtable();
 
             /*
             arrayList.Add(22);
@@ -50,6 +95,7 @@ namespace csharpcollection
             */
 
             // Adding queue
+            /*
             Queue days = new Queue();
 
             // Adding element into queue
@@ -66,6 +112,28 @@ namespace csharpcollection
             {
                 Console.WriteLine(item);
             }
+            */
+
+            // Testing for yield method
+            /*
+            foreach(var item in EnumMethod(10))
+            {
+                Console.WriteLine(item);
+            }
+            
+            Console.ReadLine();
+            */
+
+            MyList<Person> temp = new MyList<Person>();
+            temp.Add(new Person { Name = "Tuan Anh Le", Age = 35});
+            temp.Add(new Person { Name = "Nguyen Thi Mai Huong", Age = 35});
+
+            foreach(var item in temp)
+            {
+                Console.WriteLine("Person {0} {1}", item.Name, item.Age);
+            }
+
+            Console.ReadLine();
         }
     }
 }
