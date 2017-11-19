@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace csharpcollection
 {
@@ -124,6 +125,7 @@ namespace csharpcollection
             Console.ReadLine();
             */
 
+            /*
             MyList<Person> temp = new MyList<Person>();
             temp.Add(new Person { Name = "Tuan Anh Le", Age = 35});
             temp.Add(new Person { Name = "Nguyen Thi Mai Huong", Age = 35});
@@ -134,6 +136,14 @@ namespace csharpcollection
             }
 
             Console.ReadLine();
+            */
+            var numbers = Enumerable.Range(0, 10);
+            var parallelResult = numbers.AsParallel().Where( i => i % 2 == 0).ToArray();
+
+            foreach(int i in parallelResult)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }
