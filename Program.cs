@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Concurrent;
+using System.Threading.Tasks;
 
 namespace csharpcollection
 {
@@ -137,13 +139,35 @@ namespace csharpcollection
 
             Console.ReadLine();
             */
-            var numbers = Enumerable.Range(0, 10);
-            var parallelResult = numbers.AsParallel().AsOrdered().Where( i => i % 2 == 0).ToArray();
 
-            foreach(int i in parallelResult)
-            {
-                Console.WriteLine(i);
-            }
+            // Convert sequential into parallel
+            /*
+            var numbers = Enumerable.Range(0, 30);
+            var parallelResult = numbers.AsParallel().Where( i => i % 2 == 0);
+
+            parallelResult.ForAll(e => Console.WriteLine(e));
+            */
+
+            BlockingCollection<string> col = new BlockingCollection<string>();
+            Task read = Task.Run(() => {
+                while(true)
+                {
+                    Console.WriteLine("Input: {0}",col.Take());
+                }
+            });
+            Task write = Task.Run(() => {
+                while(true)
+                {
+                    string s = Console.ReadLine();
+                    if (string.IsNullOrEmpty(s))
+                    {
+                        break;
+                    } else {
+                        col.Add(s);
+                    }
+                }
+            });
+            write.Wait();
         }
     }
 }
